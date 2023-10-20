@@ -27,5 +27,5 @@ let isLoggedIn = false; //boolean
 //object
 
 console.log(typeof "hitesh"); //string --> gives the type
-console.log(typeof null); // object --> language error/ not type null
+console.log(typeof null); // object --> language error/ not of type null
 console.log(typeof undefined); // undefined-->type
