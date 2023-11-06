@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    function addLanguage(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = langName; //traversing whole documet tree
+      document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("Python");
+
+    function addLangOptimised(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName)); //directly appends without traversing the whole tree
+      document.querySelector(".language").appendChild(li);
+    }
+
+    addLangOptimised("Go");
+
+    //edit
+    const secondLang = document.querySelector("li:nth-child(1)");
+    const li = document.createElement("li");
+    li.textContent = "mojo";
+    secondLang.replaceWith(li);
+
+    //edit
+    const firstLanguage = document.querySelector("li:first-child");
+    firstLanguage.outerHTML = "<li>Typescript</li>";
+
+    //remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+  </script>
+</html>
